@@ -266,6 +266,13 @@ ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
   /* Remove height: auto if it's specified */
   object-fit: cover; 
 }
+
+.card-content {
+  position: relative; /* not absolute */
+  /* Add top margin if necessary to push down the content */
+  margin-top: 20px; /* Adjust based on your layout */
+}
+
 ul.side-nav.fixed li.logo {
   background-color: #fafafa;
   border-bottom: 1px solid #ddd;
