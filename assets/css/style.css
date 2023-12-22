@@ -258,7 +258,7 @@ ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  padding-top: 25px;
+  padding-top: 10px;
   height: 0;
 }
 
