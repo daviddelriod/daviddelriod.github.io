@@ -270,6 +270,12 @@ ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
   height: 100%;
 }
 
+.card-video {
+  max-width: 100%; /* Adjust if needed to match image dimensions */
+  height: auto; /* Adjust if needed */
+  object-fit: cover; /* This will make the video cover the area similar to background-size: cover for images */
+}
+
 
 ul.side-nav.fixed li.logo {
   background-color: #fafafa;
