@@ -1,3 +1,48 @@
+/* Carousel Styles */
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: calc(100% / 3); /* Ajusta el número de publicaciones visibles aquí */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* Para evitar problemas de superposición */
+}
+
+.carousel-button {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  pointer-events: all; /* Para asegurarse de que los botones sean clicables */
+  z-index: 1001;
+}
+
+.carousel-button#prev {
+  left: 10px; /* Ajusta la posición del botón izquierdo */
+}
+
+.carousel-button#next {
+  right: 10px; /* Ajusta la posición del botón derecho */
+}
+
 .profile-pic {
   position: relative;
   max-width:130px;
@@ -161,51 +206,6 @@ blockquote {
   font-weight: 400;
   margin: 20px 0;
   padding-left: 1.5rem;
-}
-
-/* Agrega este CSS en tu archivo de estilo (style.css) o directamente en el <head> del HTML */
-.carousel-container {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-
-.carousel-content {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-item {
-  min-width: calc(100% / 3); /* Ajusta el número de publicaciones visibles aquí */
-  box-sizing: border-box;
-  padding: 10px;
-}
-
-.carousel-buttons {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  pointer-events: none; /* Para evitar problemas de superposición */
-}
-
-.carousel-button {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  pointer-events: all; /* Para asegurarse de que los botones sean clicables */
-  z-index: 1001; /* Asegúrate de que los botones estén en la parte superior */
-}
-
-.carousel-button#prev {
-  left: 10px; /* Ajusta la posición del botón izquierdo */
-}
-
-.carousel-button#next {
-  right: 10px; /* Ajusta la posición del botón derecho */
 }
 
 blockquote * {
