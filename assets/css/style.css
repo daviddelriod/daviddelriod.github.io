@@ -34,11 +34,11 @@
 }
 
 .carousel-button#prev {
-  left: 0; /* Ajusta la posición del botón izquierdo */
+  left: 15; /* Ajusta la posición del botón izquierdo */
 }
 
 .carousel-button#next {
-  right: 0; /* Ajusta la posición del botón derecho */
+  right: 15; /* Ajusta la posición del botón derecho */
 }
 
 .profile-pic {
