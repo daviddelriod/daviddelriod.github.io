@@ -164,6 +164,7 @@ blockquote {
 }
 
 /* Agrega este CSS en tu archivo de estilo (style.css) o directamente en el <head> del HTML */
+/* Agrega este CSS en tu archivo de estilo (style.css) o directamente en el <head> del HTML */
 .carousel-container {
   overflow: hidden;
   width: 100%;
@@ -188,6 +189,7 @@ blockquote {
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
+  z-index: 1000; /* Asegúrate de que los botones estén en la parte superior */
 }
 
 .carousel-button {
@@ -195,7 +197,7 @@ blockquote {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 10;
+  z-index: 1001; /* Asegúrate de que los botones estén en la parte superior */
 }
 
 blockquote * {
