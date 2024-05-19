@@ -1,4 +1,3 @@
-/* Carousel Styles */
 .carousel-container {
   overflow: hidden;
   width: 100%;
@@ -23,7 +22,7 @@
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  pointer-events: none; /* Para evitar problemas de superposición */
+  z-index: 1000; /* Asegúrate de que los botones estén en la parte superior */
 }
 
 .carousel-button {
@@ -31,16 +30,15 @@
   border: none;
   cursor: pointer;
   padding: 10px;
-  pointer-events: all; /* Para asegurarse de que los botones sean clicables */
-  z-index: 1001;
+  z-index: 1001; /* Asegúrate de que los botones estén en la parte superior */
 }
 
 .carousel-button#prev {
-  left: 10px; /* Ajusta la posición del botón izquierdo */
+  left: 0; /* Ajusta la posición del botón izquierdo */
 }
 
 .carousel-button#next {
-  right: 10px; /* Ajusta la posición del botón derecho */
+  right: 0; /* Ajusta la posición del botón derecho */
 }
 
 .profile-pic {
