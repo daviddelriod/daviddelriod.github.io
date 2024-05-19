@@ -163,6 +163,41 @@ blockquote {
   padding-left: 1.5rem;
 }
 
+/* Agrega este CSS en tu archivo de estilo (style.css) o directamente en el <head> del HTML */
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: calc(100% / 3); /* Ajusta el número de publicaciones visibles aquí */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-button {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
 blockquote * {
   font-size: inherit;
   line-height: inherit;

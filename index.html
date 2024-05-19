@@ -302,11 +302,11 @@
     <!-- Third Section: Publications -->
     <section id="publications" class="section scrollspy">
       <h3 class="page-title white-text teal">Publications</h3>
-      <div class="container">
-        <div class="row">
-          <div class="col s12 m6 l4">
+      <div class="container carousel-container">
+        <div class="carousel-content">
+          <div class="carousel-item col s12 m6 l4">
             <div class="card medium">
-              <div class= "video-container">
+              <div class="video-container">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7186619353570623488?compact=1" frameborder="0" allowfullscreen="" scrolling="no"></iframe>              
               </div>
               <div class="card-content">
@@ -337,9 +337,9 @@
             </div>
           </div>
 
-          <div class="col s12 m6 l4">
+          <div class="carousel-item col s12 m6 l4">
             <div class="card medium">
-              <div class= "video-container">
+              <div class="video-container">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7181545743000748032?compact=1" frameborder="0" allowfullscreen="" scrolling="no"></iframe>              
               </div>
               <div class="card-content">
@@ -367,9 +367,9 @@
             </div>
           </div>
 
-          <div class="col s12 m6 l4">
+          <div class="carousel-item col s12 m6 l4">
             <div class="card medium">
-              <div class= "video-container">
+              <div class="video-container">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7176487341442650113?compact=1" frameborder="0" allowfullscreen="" scrolling="no"></iframe>              
               </div>
               <div class="card-content">
@@ -399,9 +399,9 @@
           </div>
 
 
-          <div class="col s12 m6 l4">
+          <div class="carousel-item col s12 m6 l4">
             <div class="card medium">
-              <div class= "video-container">
+              <div class="video-container">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7171419283250429952?compact=1" frameborder="0" allowfullscreen="" scrolling="no"></iframe>              
               </div>
               <div class="card-content">
@@ -434,9 +434,9 @@
             </div>
           </div>
 
-          <div class="col s12 m6 l4">
+          <div class="carousel-item col s12 m6 l4">
             <div class="card medium">
-              <div class= "video-container">
+              <div class="video-container">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7156202244328062977?compact=1" frameborder="0" allowfullscreen="" scrolling="no"></iframe>              
               </div>
               <div class="card-content">
@@ -469,9 +469,9 @@
           </div>
 
 
-          <div class="col s12 m6 l4">
+          <div class="carousel-item col s12 m6 l4">
             <div class="card medium">
-              <div class= "video-container">
+              <div class="video-container">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7151032944034263040?compact=1" scrolling="no" frameborder="0" allowfullscreen=""></iframe>            
               </div>
               <div class="card-content">
@@ -502,9 +502,9 @@
             </div>
           </div>
 
-          <div class="col s12 m6 l4">
+          <div class="carousel-item col s12 m6 l4">
             <div class="card medium">
-              <div class= "video-container">
+              <div class="video-container">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7138359035988291585?compact=1" frameborder="0" allowfullscreen="" scrolling="no"></iframe>              </div>
               <div class="card-content">
                 <span class="card-title activator teal-text hoverline">Giroud's goal of the year analysis!<i
@@ -534,9 +534,9 @@
             </div>
           </div>
 
-          <div class="col s12 m6 l4">
+          <div class="carousel-item col s12 m6 l4">
             <div class="card medium">
-              <div class= "video-container">
+              <div class="video-container">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7133379007890268160?compact=1" frameborder="0" allowfullscreen="" scrolling="no"></iframe>              </div>
               <div class="card-content">
                 <span class="card-title activator teal-text hoverline">La Liga 16/17 tbt!<i
@@ -604,9 +604,9 @@
           </div> -->
 
           <!-- Flask Project -->
-          <div class="col s12 m6 l4">
+          <div class="carousel-item col s12 m6 l4">
             <div class="card medium">
-              <div class= "video-container">
+              <div class="video-container">
                 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7128154496286810114?compact=1" frameborder="0" allowfullscreen="" scrolling="no"></iframe>              </div>
               <div class="card-content">
                 <span class="card-title activator teal-text hoverline">WC final 2022 Argentina's goal!<i
@@ -638,6 +638,10 @@
           </div>
 
           <!-- ************* -->
+        </div>
+        <div class="carousel-buttons">
+          <button class="carousel-button" id="prev">&#10094;</button>
+          <button class="carousel-button" id="next">&#10095;</button>
         </div>
       </div>
     </section>
@@ -1011,6 +1015,36 @@ of each drug container to estimate the degradation of the drug.
       backSpeed: 40
     });
   </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.carousel-content');
+    const items = document.querySelectorAll('.carousel-item');
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const itemWidth = items[0].clientWidth;
+      carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+
+    next.addEventListener('click', () => {
+      if (currentIndex < items.length - 3) { // Cambia el número 3 según el número de publicaciones visibles
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+
+    prev.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+  });
+</script>
 
 
   <!-- jQuery-->
